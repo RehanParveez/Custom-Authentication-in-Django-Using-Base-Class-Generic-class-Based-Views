@@ -1,0 +1,63 @@
+{% extends 'khata/parent.html' %}
+{% block title %}Login{% endblock title %}
+{% block content %}
+<div class="flex items-center justify-center px-4 py-8">
+<div class="w-full max-w-md p-8 space-y-6 bg-gray-800
+rounded-1g shadow-md">
+<h2 class="text-2x1 font-bold text-center">Login to Your Account</h2>
+<form action="" method="POST" class="space-y-6" novalidate>
+{% csrf_token %}
+
+ {% comment %} Email Field {% endcomment %}
+
+<div>
+<label for="email" class="block text-sm
+font-medium">Email</label>
+<input type="email" name="email" id="email"
+class="block w-full mt-1 border-gray-600 rounded-md
+shadow-sm bg-gray-700 p-2" placeholder="you@example.
+com" required>
+</div>
+
+ {% comment %} Password Field {% endcomment %}
+
+<div>
+<label for="password" class="block text-sm font-medium">Password</label>
+<input type="password" name="password" id="password" class="block w-full mt-1 border-gray-600 rounded-md shadow-sm bg-gray-700 p-2" placeholder="........" required>
+</div>
+
+ {% comment %} Forgot Password Link {% endcomment %}
+
+<div class="text-right">
+<a href="{% url 'password_reset' %}" class="text-sm
+text-rose-400 hover:underline">Forgot password?</a>
+</div>
+
+<!-- Login Button -->
+
+<button type="submit" class="w-full px-4 py-2 text-white
+rounded-md bg-rose-500 hover:bg-rose-600
+focus: outline-none focus: bg-rose-600">Sign in</button>
+</form>
+
+<!-- Divider -->
+
+<div class="relative mt-6">
+<div class="absolute inset-0 flex items-center">
+<div class="w-full border-t border-gray-600"></div>
+</div>
+<div class="relative flex justify-center text-sm">
+<span class="px-2 bg-gray-800 text-gray-400">Or</span>
+</div>
+</div>
+
+<!-- Create Account Link -->
+
+<div class="text-center">
+<a href="{% url 'submit' %}" class="text-sm
+text-rose-400 hover:underline">Create an account</a>
+</div>
+</div>
+</div>
+
+{% endblock content %}
